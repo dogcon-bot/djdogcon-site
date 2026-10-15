@@ -41,3 +41,12 @@ h2{font-size:32px;text-transform:uppercase;letter-spacing:3px;margin-bottom:18px
 footer{text-align:center;padding:28px;font-size:13px;opacity:.6}
 @media(min-width:640px){.grid{grid-template-columns:repeat(4,1fr)}nav{gap:20px}}
 @media(max-width:420px){nav a:nth-child(3){display:none}}
+.vision{margin:16px 0 0;text-transform:uppercase;font-weight:700}
+.btn.yt{background:#ff0000;border-color:#ff0000;margin:0 0 20px}
+.shorts{display:flex;gap:12px;overflow-x:auto;padding-bottom:12px;margin-bottom:16px}
+.short{flex:0 0 180px;position:relative;aspect-ratio:9/16;border:2px solid var(--red);overflow:hidden;text-decoration:none}
+.short img{width:100%;height:100%;object-fit:cover}
+.short span{position:absolute;bottom:0;left:0;right:0;padding:8px;background:rgba(0,0,0,.7);font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:1px}
+.signup{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.signup input{flex:1 1 220px;padding:14px;font-size:16px;border:2px solid #fff;background:#000;color:#fff}
+.note{opacity:.7;font-size:14px;text-align:center}
