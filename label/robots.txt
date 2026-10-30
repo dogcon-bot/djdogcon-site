@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://djdogcon.com/label/sitemap.xml
