@@ -1,0 +1,115 @@
+:root{
+  --bg:#070608;--panel:#121014;--ink:#f4f0ea;--muted:#b7b0a8;--red:#dc2828;--line:#2a262c;
+  --max:1120px;--radius:14px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.6rem 1rem;background:var(--red);z-index:100;border-radius:8px}
+.top{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1.25rem;background:rgba(7,6,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-weight:800;letter-spacing:.04em}
+.brand img{width:36px;height:40px;object-fit:contain}
+nav{display:flex;flex-wrap:wrap;gap:.85rem;font-size:.92rem}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover,nav a:focus{color:var(--ink)}
+
+/* Full-bleed hero: edge to edge, no boxed frame */
+.hero{
+  position:relative;
+  width:100%;
+  margin:0;
+  min-height:min(92vh,920px);
+  display:grid;
+  align-items:end;
+  overflow:hidden;
+  border:0;
+  border-radius:0;
+  padding:0;
+  background:#000;
+}
+.hero-media{
+  position:absolute;inset:0;z-index:0;
+  width:100%;height:100%;
+  background:#000 url('assets/hero/hero_nologo_1920x1080.webp') center/cover no-repeat;
+}
+.hero-media .hero-still{display:none} /* CSS background is the still; avoids img letterboxing */
+.hero-media video{
+  position:absolute;inset:0;
+  width:100%!important;height:100%!important;
+  max-width:none!important;max-height:none!important;
+  object-fit:cover;object-position:center 40%;
+  display:block;border:0;
+}
+.hero-shade{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg,rgba(7,6,8,.82) 0%,rgba(7,6,8,.45) 42%,rgba(7,6,8,.15) 70%,rgba(7,6,8,.35) 100%),
+    linear-gradient(180deg,rgba(7,6,8,.2) 0%,rgba(7,6,8,.15) 40%,rgba(7,6,8,.92) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  width:min(var(--max),100%);
+  margin:0 auto;
+  padding:6rem 1.25rem 3.2rem;
+  max-width:34rem; /* keep copy on the dark left, clear of stage center */
+}
+.kicker{color:var(--red);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;margin:0 0 .6rem}
+.hero h1{
+  font-size:clamp(2rem,5.2vw,3.4rem);
+  line-height:1.02;
+  margin:0 0 .75rem;
+  letter-spacing:-.02em;
+  text-shadow:0 2px 24px rgba(0,0,0,.75);
+}
+.hero .lede{max-width:32rem;color:#ddd7d0;font-size:1.05rem;margin:0 0 1.4rem;text-shadow:0 1px 12px rgba(0,0,0,.65)}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.85rem 1.15rem;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:700;background:rgba(0,0,0,.35);color:var(--ink)}
+.btn:hover,.btn:focus{border-color:#555}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover,.btn.red:focus{filter:brightness(1.08)}
+section{width:min(var(--max),100%);margin:0 auto;padding:3.5rem 1.25rem}
+section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 .4rem;letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:40rem;margin:0 0 1.6rem}
+.grid{display:grid;gap:1rem}
+.artists{grid-template-columns:1.2fr .8fr}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem;overflow:hidden}
+.card h3{margin:.2rem 0 .5rem;font-size:1.25rem}
+.card p{margin:0 0 1rem;color:var(--muted)}
+.artist-feat{display:grid;gap:1rem;align-items:center}
+@media(min-width:760px){.artist-feat{grid-template-columns:140px 1fr}}
+.avatar{width:140px;height:140px;border-radius:18px;background:#000;object-fit:cover;border:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font-size:.85rem;padding:.45rem .75rem;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--muted)}
+.chip:hover{color:var(--ink);border-color:#666}
+.releases{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.release{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.release img{aspect-ratio:1;width:100%;object-fit:cover;background:#111}
+.release .meta{padding:.8rem .9rem}
+.release strong{display:block;font-size:.98rem}
+.release span{color:var(--muted);font-size:.85rem}
+.studio-grid,.show-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#000}
+.shot img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.shot figcaption{padding:.7rem .9rem;color:var(--muted);font-size:.88rem;background:var(--panel)}
+.banner-strip{margin:1rem 0 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.banner-strip img{width:100%;aspect-ratio:16/5;object-fit:cover}
+.sign{display:grid;gap:1.2rem}
+@media(min-width:860px){.sign{grid-template-columns:1.1fr .9fr}}
+.sign-panel{background:linear-gradient(160deg,#17131a,#0d0b10 60%);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem}
+.sign-panel ul{margin:.4rem 0 1.1rem;padding-left:1.1rem;color:var(--muted)}
+.contact-box{border:1px dashed #4a3a3a;border-radius:12px;padding:1rem;background:#120e12}
+.contact-box a{color:#fff;font-weight:700}
+.note{color:var(--muted);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:1.6rem 1.25rem 2.4rem;color:var(--muted);text-align:center}
+.foot-inner{width:min(var(--max),100%);margin:0 auto;display:grid;gap:.7rem;justify-items:center}
+.foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:800;color:var(--ink)}
+.foot-brand img{width:28px;height:auto}
+.tiny{font-size:.82rem}
+@media(max-width:720px){
+  nav{display:none}
+  .artists{grid-template-columns:1fr}
+  .hero{min-height:78vh}
+  .hero-inner{max-width:100%;padding-top:4.5rem}
+  .hero h1{font-size:clamp(1.85rem,9vw,2.6rem)}
+}
