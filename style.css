@@ -53,3 +53,10 @@ footer{text-align:center;padding:28px;font-size:13px;opacity:.6}
 .new-single{text-align:center;margin:0 0 22px;font-size:13px;letter-spacing:.4px}
 .new-single a{text-decoration:underline;text-underline-offset:3px;opacity:.9}
 .new-single a:hover{color:var(--red)}
+/* Append to djdogcon.com/style.css. Uses existing color tokens only. */
+.album{display:flex;align-items:center;gap:18px;background:rgba(0,0,0,.55);border:2px solid var(--red);padding:20px}
+.album img{width:180px;height:180px;object-fit:cover;flex:0 0 180px}
+.album p{margin:0 0 8px}
+.sc-embed{margin:12px 0;border:2px solid var(--red);background:#000}
+.sc-embed iframe{display:block;width:100%}
+@media(max-width:560px){.album{flex-direction:column;align-items:flex-start}.album img{width:100%;height:auto;flex:none}}
